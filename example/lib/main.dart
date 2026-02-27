@@ -47,17 +47,19 @@ class _MyAppState extends State<MyApp> {
                     });
                   }
                 },
-                child: const Padding(padding: EdgeInsets.all(15), child: Text('Press')),
+                child: const Padding(
+                    padding: EdgeInsets.all(15), child: Text('Press')),
               ),
               if (Platform.isIOS)
                 InkWell(
                   onTap: () async {
-                    final response = await _flutterLoginYandexPlugin.signOut();
+                    await _flutterLoginYandexPlugin.signOut();
                     setState(() {
                       _token = '';
                     });
                   },
-                  child: const Padding(padding: EdgeInsets.all(15), child: Text('Sign Out')),
+                  child: const Padding(
+                      padding: EdgeInsets.all(15), child: Text('Sign Out')),
                 ),
             ],
           ),
